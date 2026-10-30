@@ -1,3 +1,11 @@
+import Navbar from "./Navbar/Navbar";
+import Hero from "./Hero/Hero";
+
 export default function App() {
-  return <div className="flex text-green-300">Hello react</div>;
+  return (
+    <div className="max-w-360 p-9">
+      <Navbar />
+      <Hero />
+    </div>
+  );
 }
