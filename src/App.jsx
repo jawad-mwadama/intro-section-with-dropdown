@@ -1,6 +1,3 @@
-
 export default function App() {
-  return (
-    <div className="text-green-300 flex">Hello react</div>
-  )
+  return <div className="flex text-green-300">Hello react</div>;
 }
