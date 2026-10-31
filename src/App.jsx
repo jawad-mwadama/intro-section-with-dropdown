@@ -3,7 +3,7 @@ import Hero from "./Hero/Hero";
 
 export default function App() {
   return (
-    <div className="max-w-360 p-9">
+    <div className="w-full p-3">
       <Navbar />
       <Hero />
     </div>
