@@ -100,7 +100,7 @@ function Navbar() {
         {/* Desktop buttons */}
         <div className="hidden items-center gap-6 md:flex">
           <a href="/login">Login</a>
-          <button className="rounded-lg border-2 border-black p-2">
+          <button className="hover rounded-lg border-2 border-black px-4 py-2 hover:cursor-pointer hover:border-2 hover:border-white hover:bg-black hover:text-white hover:duration-300 hover:ease-in-out">
             Register
           </button>
         </div>
@@ -143,7 +143,7 @@ function Navbar() {
 
         <div className="flex flex-col items-center gap-6">
           <a href="/login">Login</a>
-          <button className="w-full rounded-lg border-2 border-black p-2">
+          <button className="hover rounded-lg border-2 border-black px-4 py-2 hover:cursor-pointer hover:border-2 hover:border-white hover:bg-black hover:text-white hover:duration-300 hover:ease-in-out">
             Register
           </button>
         </div>
