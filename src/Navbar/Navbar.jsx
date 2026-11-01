@@ -1,5 +1,4 @@
 //import React from "react";
-import logo from "../assets/images/logo.svg";
 //import todoIcon from "../assets/images/icon-todo.svg";
 
 // const navLinks = [
@@ -73,13 +72,24 @@ import logo from "../assets/images/logo.svg";
 //   );
 // }
 
+import { useState } from "react";
+import logo from "../assets/images/logo.svg";
+import hamburgerMenu from "../assets/images/icon-menu.svg";
+import closeMenu from "../assets/images/icon-close-menu.svg";
+
 function Navbar() {
+  const [nav, setNav] = useState(false);
+
+  const handleToggle = () => setNav(!nav);
+
   return (
-    <nav>
-      <div className="m-8 flex items-center justify-between">
-        <div className="flex gap-12">
-          <img src={logo} alt="/" />
-          <ul className="flex gap-8">
+    <>
+      <nav className="m-8 flex items-center justify-between">
+        {/* Logo and desktop links */}
+        <div className="flex items-center gap-12">
+          <img src={logo} alt="logo" />
+
+          <ul className="hidden gap-8 md:flex">
             <li>Features</li>
             <li>Company</li>
             <li>Careers</li>
@@ -87,14 +97,58 @@ function Navbar() {
           </ul>
         </div>
 
-        <div className="flex items-center gap-6">
+        {/* Desktop buttons */}
+        <div className="hidden items-center gap-6 md:flex">
           <a href="/login">Login</a>
-          <span className="rounded-lg border-2 border-black p-2">
-            <button>Register</button>
-          </span>
+          <button className="rounded-lg border-2 border-black p-2">
+            Register
+          </button>
         </div>
-      </div>
-    </nav>
+
+        {/* Hamburger button */}
+        <button
+          type="button"
+          onClick={handleToggle}
+          className="z-30 block md:hidden"
+        >
+          <img
+            src={nav ? closeMenu : hamburgerMenu}
+            alt={nav ? "Close menu" : "Open menu"}
+          />
+        </button>
+      </nav>
+
+      {/* background for active mobile menu */}
+
+      {/* Dark overlay */}
+      {nav && (
+        <div
+          onClick={handleToggle}
+          className="fixed inset-0 z-10 bg-black/50 md:hidden"
+        />
+      )}
+
+      {/* Mobile navigation */}
+      <nav
+        className={`fixed top-0 right-0 z-20 flex h-full w-[70%] flex-col justify-between bg-white p-6 transition-transform duration-300 ${
+          nav ? "translate-x-0" : "translate-x-full"
+        } md:hidden`}
+      >
+        <ul className="mt-16 flex flex-col gap-8">
+          <li>Features</li>
+          <li>Company</li>
+          <li>Careers</li>
+          <li>About</li>
+        </ul>
+
+        <div className="flex flex-col items-center gap-6">
+          <a href="/login">Login</a>
+          <button className="w-full rounded-lg border-2 border-black p-2">
+            Register
+          </button>
+        </div>
+      </nav>
+    </>
   );
 }
 
