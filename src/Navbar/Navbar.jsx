@@ -130,7 +130,7 @@ function Navbar() {
 
       {/* Mobile navigation */}
       <nav
-        className={`fixed top-0 right-0 z-20 flex h-full w-[70%] flex-col justify-between bg-white p-6 transition-transform duration-300 ${
+        className={`fixed top-0 right-0 z-20 flex h-full w-[65%] flex-col bg-white p-4 transition-transform duration-300 ${
           nav ? "translate-x-0" : "translate-x-full"
         } md:hidden`}
       >
@@ -141,7 +141,7 @@ function Navbar() {
           <li>About</li>
         </ul>
 
-        <div className="flex flex-col items-center gap-6">
+        <div className="mt-12 flex flex-col items-center gap-6">
           <a href="/login">Login</a>
           <button className="hover rounded-lg border-2 border-black px-4 py-2 hover:cursor-pointer hover:border-2 hover:border-white hover:bg-black hover:text-white hover:duration-300 hover:ease-in-out">
             Register

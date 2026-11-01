@@ -11,11 +11,11 @@ function Hero() {
     <div className="mx-auto mt-8 w-full max-w-7xl px-6">
       <div className="flex flex-col-reverse items-center gap-12 md:flex-row md:gap-24">
         {/* text side */}
-        <div className="w-full max-w-xl py-8 md:py-0">
+        <div className="w-full max-w-xl py-8 text-center md:py-0 md:text-start">
           <h1 className="mb-8 font-heading text-5xl font-bold md:text-7xl">
             Make <br /> remote work
           </h1>
-          <p className="mb-8 max-w-sm text-base/8 text-gray-500">
+          <p className="mb-8 max-w-sm text-base/8 text-gray-500 md:text-start">
             Get your team in sync, no matter your location. Streamline
             processes, create team rituals, and watch productivity soar.
           </p>
