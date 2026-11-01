@@ -76,7 +76,7 @@ import logo from "../assets/images/logo.svg";
 function Navbar() {
   return (
     <nav>
-      <div className="flex items-center justify-between p-4">
+      <div className="m-8 flex items-center justify-between">
         <div className="flex gap-12">
           <img src={logo} alt="/" />
           <ul className="flex gap-8">
