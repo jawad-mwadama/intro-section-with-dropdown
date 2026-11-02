@@ -10,6 +10,7 @@ import arrowDown from "../assets/images/icon-arrow-down.svg";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
+  const [openTab, setOpenTab] = useState(null);
 
   const handleToggle = () => setNav(!nav);
 
@@ -21,29 +22,49 @@ function Navbar() {
           <img src={logo} alt="logo" />
 
           <nav className="hidden gap-8 md:flex md:items-center">
-            {navLinks.map((navLink) => (
+            {navLinks.map((navLink, index) => (
               <div key={navLink.label}>
                 {navLink.dropDownItems ? (
-                  <div>
-                    <button className="flex items-center gap-2">
+                  <div
+                    className="relative h-fit w-fit"
+                    onMouseEnter={() => setNav(true)}
+                    onMouseLeave={() => setNav(false)}
+                  >
+                    <button
+                      className="relative flex items-center gap-2"
+                      onClick={() =>
+                        setOpenTab(openTab === index ? null : index)
+                      }
+                    >
                       {navLink.label}
                       <img
-                        src={arrowDown}
+                        src={openTab === index ? arrowUp : arrowDown}
                         className="h-2 w-auto object-cover"
                         alt="/"
                       />
                     </button>
 
-                    <ul>
-                      {navLink.dropDownItems.map((item) => (
-                        <li key={item.label}>
-                          <a href={item.path} className="hidden">
-                            {item.icon && <img src={item.icon} alt="" />}
-                            {item.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* focus here */}
+
+                    {openTab === index && (
+                      <ul className="absolute top-full left-0 z-10 mt-3 w-42 space-y-2 rounded-lg bg-white p-4 px-7 shadow-xl">
+                        {navLink.dropDownItems.map((item) => (
+                          <li key={item.label} className="">
+                            <a
+                              href={item.path}
+                              className="flex items-center gap-3 rounded-md"
+                            >
+                              <img
+                                src={item.icon}
+                                alt=""
+                                className="h-4 w-auto"
+                              />
+                              {item.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 ) : (
                   <a href={navLink.path}>{navLink.label}</a>

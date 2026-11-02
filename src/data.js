@@ -1,3 +1,8 @@
+import todoIcon from "./assets/images/icon-todo.svg";
+import calendar from "./assets/images/icon-calendar.svg";
+import reminders from "./assets/images/icon-reminders.svg";
+import planning from "./assets/images/icon-planning.svg";
+
 export const navLinks = [
   {
     label: "Features",
@@ -5,22 +10,22 @@ export const navLinks = [
       {
         label: "Todo List",
         path: "/features/todo-list",
-        icon: "./assets/images/icon-todo.svg",
+        icon: todoIcon,
       },
       {
         label: "Calender",
         path: "/features/calendar",
-        icon: "./assets/images/icon-calendar.svg",
+        icon: calendar,
       },
       {
         label: "Reminders",
         path: "/features/reminders",
-        icon: "./assets/images/icon-reminders.svg",
+        icon: reminders,
       },
       {
         label: "Planning",
         path: "/features/planning",
-        icon: "./assets/images/icon-planning.svg",
+        icon: planning,
       },
     ],
   },
