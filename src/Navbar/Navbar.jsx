@@ -117,7 +117,7 @@ function Navbar() {
       >
         <div className="flex flex-col gap-6">
           {navLinks.map((navLink, index) => (
-            <div key={navLink.label}>
+            <div key={navLink.label} className="text-gray-600 hover:text-black">
               {navLink.dropDownItems ? (
                 <>
                   <button
@@ -165,7 +165,7 @@ function Navbar() {
         <div className="mt-12 flex flex-col items-center gap-6">
           <a href="/login">Login</a>
 
-          <button className="rounded-lg border-2 border-black px-4 py-2 transition-colors hover:bg-black hover:text-white">
+          <button className="w-full rounded-lg border-2 border-black px-4 py-2 transition-colors hover:bg-black hover:text-white">
             Register
           </button>
         </div>
